@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Login from '../components/Login';
 import Register from '../components/Register';
@@ -16,7 +16,7 @@ const ProtectedRoute = ({ children }) => {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -30,7 +30,7 @@ function App() {
         <Route path="/transfers" element={<ProtectedRoute><TransfersPage /></ProtectedRoute>} />
 
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

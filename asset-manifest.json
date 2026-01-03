@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/RoyalTrack/static/css/main.e3cca565.css",
-    "main.js": "/RoyalTrack/static/js/main.cace9f92.js",
+    "main.js": "/RoyalTrack/static/js/main.8001b711.js",
     "static/js/453.921ace6e.chunk.js": "/RoyalTrack/static/js/453.921ace6e.chunk.js",
     "index.html": "/RoyalTrack/index.html",
     "main.e3cca565.css.map": "/RoyalTrack/static/css/main.e3cca565.css.map",
-    "main.cace9f92.js.map": "/RoyalTrack/static/js/main.cace9f92.js.map",
+    "main.8001b711.js.map": "/RoyalTrack/static/js/main.8001b711.js.map",
     "453.921ace6e.chunk.js.map": "/RoyalTrack/static/js/453.921ace6e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e3cca565.css",
-    "static/js/main.cace9f92.js"
+    "static/js/main.8001b711.js"
   ]
 }

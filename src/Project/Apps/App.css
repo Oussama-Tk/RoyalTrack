@@ -1,0 +1,153 @@
+/* Dark Royal Theme */
+:root {
+  --bg-dark: #0f0c15;
+  --card-bg: #1a1625;
+  --primary: #7e22ce; /* Royal Purple */
+  --accent: #d8b4fe;  /* Light Purple */
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+  --glass: rgba(126, 34, 206, 0.15);
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #d8b4fe, #7e22ce);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+/* Cards (Glassmorphism) */
+.card {
+  background: var(--card-bg);
+  border: 1px solid rgba(126, 34, 206, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Dashboard Grid */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, rgba(126, 34, 206, 0.4), rgba(0,0,0,0));
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--primary);
+}
+
+.amount-display {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/* Form Styles */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  align-items: end;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  background: #272036;
+  border: 1px solid #443c55;
+  border-radius: 8px;
+  color: white;
+  outline: none;
+  box-sizing: border-box; /* Important for grid */
+}
+
+input:focus, select:focus {
+  border-color: var(--accent);
+}
+
+button.primary-btn {
+  background: linear-gradient(90deg, #7e22ce, #9333ea);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s;
+  width: 100%;
+}
+
+button.primary-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px var(--primary);
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* List Items */
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #2e2640;
+  transition: background 0.2s;
+}
+
+.transaction-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.t-info h4 { margin: 0; color: white; }
+.t-info span { font-size: 0.85rem; color: var(--text-muted); }
+
+.t-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.price-tag {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+}

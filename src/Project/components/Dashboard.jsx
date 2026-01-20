@@ -36,7 +36,7 @@ function Dashboard() {
     dispatch(deleteTransaction(id));
   };
 
-  // --- calcul dyal Dashboard ---
+
   const totalBalance = transactions.reduce((acc, curr) => acc + curr.amount, 0);
   
   const currentMonth = new Date().toISOString().slice(0, 7);
@@ -44,7 +44,8 @@ function Dashboard() {
     .filter(t => t.date.startsWith(currentMonth))
     .reduce((acc, curr) => acc + curr.amount, 0);
 
-  // --- filtre ---
+
+
   const filteredList = transactions.filter(t => {
     const matchCat = filterCat === 'All' ? true : t.category === filterCat;
     const matchDate = filterDate === '' ? true : t.date === filterDate;
@@ -62,14 +63,14 @@ function Dashboard() {
 
         <div className="summary-grid">
             <div className="summary-card">
-            <Wallet size={30} color="#d8b4fe" style={{marginBottom:10}}/>
-            <div>Total Balance</div>
-            <div className="amount-display">${totalBalance.toFixed(2)}</div>
+                <Wallet size={30} color="#d8b4fe" style={{marginBottom:10}}/>
+                <div>Total Balance</div>
+                <div className="amount-display">${totalBalance.toFixed(2)}</div>
             </div>
             <div className="summary-card">
-            <Calendar size={30} color="#d8b4fe" style={{marginBottom:10}}/>
-            <div>This Month</div>
-            <div className="amount-display">${monthSpend.toFixed(2)}</div>
+                <Calendar size={30} color="#d8b4fe" style={{marginBottom:10}}/>
+                <div>This Month</div>
+                <div className="amount-display">${monthSpend.toFixed(2)}</div>
             </div>
         </div>
 
@@ -78,42 +79,25 @@ function Dashboard() {
             <form onSubmit={handleAdd} className="form-grid">
             <div>
                 <label>Title</label>
-                <input 
-                type="text" 
-                placeholder="e.g. Burger King" 
-                value={formData.title} 
-                onChange={(e) => setFormData({...formData, title: e.target.value})}
-                />
+                <input type="text" placeholder="e.g. Burger King" value={formData.title} onChange={(e) => setFormData({...formData, title: e.target.value})}/>
             </div>
             <div>
                 <label>Amount ($)</label>
-                <input 
-                type="number" 
-                placeholder="0.00" 
-                value={formData.amount}
-                onChange={(e) => setFormData({...formData, amount: e.target.value})}
-                />
+                <input  type="number"  placeholder="0.00"  value={formData.amount} onChange={(e) => setFormData({...formData, amount: e.target.value})} />
             </div>
             <div>
                 <label>Category</label>
-                <select 
-                value={formData.category} 
-                onChange={(e) => setFormData({...formData, category: e.target.value})}
-                >
-                <option>Food</option>
-                <option>Transport</option>
-                <option>Health</option>
-                <option>Entertainment</option>
-                <option>Other</option>
+                <select value={formData.category} onChange={(e) => setFormData({...formData, category: e.target.value})}>
+                    <option>Food</option>
+                    <option>Transport</option>
+                    <option>Health</option>
+                    <option>Entertainment</option>
+                    <option>Other</option>
                 </select>
             </div>
             <div>
                 <label>Date</label>
-                <input 
-                type="date" 
-                value={formData.date}
-                onChange={(e) => setFormData({...formData, date: e.target.value})}
-                />
+                <input  type="date"  value={formData.date} onChange={(e) => setFormData({...formData, date: e.target.value})} />
             </div>
             <button type="submit" className="primary-btn">
                 <PlusCircle size={18} style={{marginRight:5, verticalAlign:'text-bottom'}}/> Add
@@ -126,22 +110,15 @@ function Dashboard() {
             <h3 style={{margin:0}}>History</h3>
             
             <div className="filter-bar" style={{marginBottom:0}}>
-                <select 
-                onChange={(e) => setFilterCat(e.target.value)} 
-                style={{padding: '8px', width: 'auto'}}
-                >
-                <option value="All">All Categories</option>
-                <option>Food</option>
-                <option>Transport</option>
-                <option>Health</option>
-                <option>Entertainment</option>
-                <option>Other</option>
+                <select onChange={(e) => setFilterCat(e.target.value)} style={{padding: '8px', width: 'auto'}}>
+                    <option value="All">All Categories</option>
+                    <option>Food</option>
+                    <option>Transport</option>
+                    <option>Health</option>
+                    <option>Entertainment</option>
+                    <option>Other</option>
                 </select>
-                <input 
-                type="date" 
-                onChange={(e) => setFilterDate(e.target.value)}
-                style={{padding: '8px', width: 'auto'}} 
-                />
+                <input type="date" onChange={(e) => setFilterDate(e.target.value)}style={{padding: '8px', width: 'auto'}} />
             </div>
             </div>
 
@@ -152,14 +129,14 @@ function Dashboard() {
                 filteredList.map((t) => (
                 <div key={t.id} className="transaction-item">
                     <div className="t-info">
-                    <h4>{t.title}</h4>
-                    <span>{t.date} • <span style={{color:'#d8b4fe'}}>{t.category}</span></span>
+                        <h4>{t.title}</h4>
+                        <span>{t.date} • <span style={{color:'#d8b4fe'}}>{t.category}</span></span>
                     </div>
                     <div className="t-actions">
-                    <div className="price-tag">-${t.amount.toFixed(2)}</div>
-                    <button className="delete-btn" onClick={() => handleDelete(t.id)}>
-                        <Trash2 size={18} />
-                    </button>
+                        <div className="price-tag">-${t.amount.toFixed(2)}</div>
+                        <button className="delete-btn" onClick={() => handleDelete(t.id)}>
+                            <Trash2 size={18} />
+                        </button>
                     </div>
                 </div>
                 ))

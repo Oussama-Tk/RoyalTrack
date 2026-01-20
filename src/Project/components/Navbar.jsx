@@ -33,7 +33,7 @@ const Navbar = () => {
            <CheckSquare size={18}/> Tasks
         </Link>
         <Link to="/transfers" style={linkStyle}>
-           <ArrowRightLeft size={18}/> Transfers
+           <ArrowRightLeft size={18}/> Transfers 
         </Link>
       </div>
 

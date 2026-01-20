@@ -22,37 +22,26 @@ const TransfersPage = () => {
       <Navbar />
       <div className="app-container">
         
-        {/* Transfer Form */}
         <div className="card" style={{ marginBottom: '30px' }}>
           <h2 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <Send color="#d8b4fe" /> Quick Transfer
           </h2>
-          <form onSubmit={handleSend} className="form-grid">
-             <div>
-               <label>Recipient Name / IBAN</label>
-               <input 
-                 type="text" 
-                 placeholder="e.g. John Doe" 
-                 value={formData.to} 
-                 onChange={(e) => setFormData({...formData, to: e.target.value})}
-               />
-             </div>
-             <div>
-               <label>Amount ($)</label>
-               <input 
-                 type="number" 
-                 placeholder="0.00" 
-                 value={formData.amount} 
-                 onChange={(e) => setFormData({...formData, amount: e.target.value})}
-               />
-             </div>
-             <button type="submit" className="primary-btn" style={{ height: '48px', marginTop: 'auto' }}>
-               Send Money
-             </button>
-          </form>
+            <form onSubmit={handleSend} className="form-grid">
+              <div>
+                <label>Recipient Name / IBAN</label>
+                <input  type="text"  placeholder="e.g. John Doe"  value={formData.to}  onChange={(e) => setFormData({...formData, to: e.target.value})}/>
+              </div>
+              <div>
+                <label>Amount ($)</label>
+                <input type="number" placeholder="0.00" value={formData.amount} onChange={(e) => setFormData({...formData, amount: e.target.value})}/>
+              </div>
+              <button type="submit" className="primary-btn" style={{ height: '48px', marginTop: 'auto' }}>
+                Send Money
+              </button>
+            </form>
         </div>
 
-        {/* Transfer History */}
+
         <div className="card">
           <h3>Recent Transfers</h3>
           {transfers.length === 0 ? <p style={{color:'#666'}}>No transfers yet.</p> : (

@@ -22,8 +22,6 @@ const ToDoPage = () => {
       <div className="app-container">
         <div className="card" style={{ maxWidth: '600px', margin: '0 auto' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Task Manager</h2>
-          
-          {/* Input Form */}
           <form onSubmit={handleAdd} style={{ display: 'flex', gap: '10px', marginBottom: '30px' }}>
             <input 
               type="text" 
@@ -35,9 +33,7 @@ const ToDoPage = () => {
             <button type="submit" className="primary-btn" style={{ width: 'auto' }}>
               <Plus size={20} />
             </button>
-          </form>
-
-          {/* Task List */}
+          </form> 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {tasks.map((task) => (
               <div 

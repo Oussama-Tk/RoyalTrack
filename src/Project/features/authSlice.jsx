@@ -1,8 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// Predefined Mock Users
 const initialState = {
-  user: null, // Currently logged in user
+  user: null, 
   isAuthenticated: false,
   usersList: [
     { email: 'admin@royal.com', password: '123', name: 'Admin User' },
@@ -34,7 +33,6 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
     },
     register: (state, action) => {
-      // Check if email already exists
       const exists = state.usersList.find(u => u.email === action.payload.email);
       if (exists) {
         state.error = "User already exists!";

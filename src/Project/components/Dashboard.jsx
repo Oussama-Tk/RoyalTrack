@@ -9,16 +9,13 @@ function Dashboard() {
   const dispatch = useDispatch();
   const transactions = useSelector((state) => state.expenses.transactions);
 
-  // --- Local State for Form ---
   const [formData, setFormData] = useState({
     title: '', amount: '', category: 'Food', date: new Date().toISOString().split('T')[0]
   });
 
-  // --- Local State for Filters ---
   const [filterCat, setFilterCat] = useState('All');
   const [filterDate, setFilterDate] = useState('');
 
-  // --- Handlers ---
   const handleAdd = (e) => {
     e.preventDefault();
     if (!formData.title || !formData.amount) return;
@@ -32,22 +29,22 @@ function Dashboard() {
     };
     
     dispatch(addTransaction(newTx));
-    setFormData({ ...formData, title: '', amount: '' }); // Reset form
+    setFormData({ ...formData, title: '', amount: '' });
   };
 
   const handleDelete = (id) => {
     dispatch(deleteTransaction(id));
   };
 
-  // --- Calculations for Dashboard ---
+  // --- calcul dyal Dashboard ---
   const totalBalance = transactions.reduce((acc, curr) => acc + curr.amount, 0);
   
-  const currentMonth = new Date().toISOString().slice(0, 7); // "2023-10"
+  const currentMonth = new Date().toISOString().slice(0, 7);
   const monthSpend = transactions
     .filter(t => t.date.startsWith(currentMonth))
     .reduce((acc, curr) => acc + curr.amount, 0);
 
-  // --- Filtering Logic ---
+  // --- filtre ---
   const filteredList = transactions.filter(t => {
     const matchCat = filterCat === 'All' ? true : t.category === filterCat;
     const matchDate = filterDate === '' ? true : t.date === filterDate;
@@ -63,7 +60,6 @@ function Dashboard() {
             <p style={{color: '#a1a1aa'}}>Manage your daily spending with style</p>
         </header>
 
-        {/* 1. DASHBOARD SUMMARY */}
         <div className="summary-grid">
             <div className="summary-card">
             <Wallet size={30} color="#d8b4fe" style={{marginBottom:10}}/>
@@ -77,7 +73,6 @@ function Dashboard() {
             </div>
         </div>
 
-        {/* 2. ADD TRANSACTION FORM */}
         <div className="card">
             <h3 style={{marginTop:0}}>Add New Expense</h3>
             <form onSubmit={handleAdd} className="form-grid">
@@ -126,12 +121,10 @@ function Dashboard() {
             </form>
         </div>
 
-        {/* 3. HISTORY & FILTERS */}
         <div className="card">
             <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom: 20}}>
             <h3 style={{margin:0}}>History</h3>
             
-            {/* Filters */}
             <div className="filter-bar" style={{marginBottom:0}}>
                 <select 
                 onChange={(e) => setFilterCat(e.target.value)} 

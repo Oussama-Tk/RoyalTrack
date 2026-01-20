@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// 1. Predefined JSON Array (Mock Data)
+
 const initialState = {
   transactions: [
     { id: 1, title: 'Grocery Run', amount: 45.50, category: 'Food', date: '2023-10-25' },

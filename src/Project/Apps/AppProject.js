@@ -21,11 +21,9 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
         
-        {/* Protected Routes */}
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/reports" element={<ProtectedRoute><Reports /></ProtectedRoute>} />
         
-        {/* New Pages */}
         <Route path="/todo" element={<ProtectedRoute><ToDoPage /></ProtectedRoute>} />
         <Route path="/transfers" element={<ProtectedRoute><TransfersPage /></ProtectedRoute>} />
 

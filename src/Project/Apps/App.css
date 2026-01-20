@@ -1,9 +1,9 @@
-/* Dark Royal Theme */
+
 :root {
   --bg-dark: #0f0c15;
   --card-bg: #1a1625;
-  --primary: #7e22ce; /* Royal Purple */
-  --accent: #d8b4fe;  /* Light Purple */
+  --primary: #7e22ce;
+  --accent: #d8b4fe; 
   --text-main: #ffffff;
   --text-muted: #a1a1aa;
   --glass: rgba(126, 34, 206, 0.15);
@@ -23,7 +23,7 @@ body {
   padding: 20px;
 }
 
-/* Header */
+
 header {
   text-align: center;
   margin-bottom: 40px;
@@ -37,7 +37,7 @@ h1 {
   margin: 0;
 }
 
-/* Cards (Glassmorphism) */
+
 .card {
   background: var(--card-bg);
   border: 1px solid rgba(126, 34, 206, 0.3);
@@ -47,7 +47,7 @@ h1 {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Dashboard Grid */
+
 .summary-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
